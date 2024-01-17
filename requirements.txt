@@ -2,3 +2,4 @@ streamlit
 joblib
 statsmodels
 pandas
+pandas.core.indexes.numeric
