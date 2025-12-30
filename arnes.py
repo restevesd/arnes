@@ -88,7 +88,7 @@ def check_size_of_boots(selected_harness_size, selected_boot_size):
 
     # Redondea al número entero más cercano porque no vendemos tallas parciales
     estimated_boot_size = int(round(estimated_boot_size))
-    selected_boot_size = int(round(float(selected_boot_size)))
+    selected_boot_size = int(round(selected_boot_size))
 
     # Verificar si el tamaño de la bota es el apropiado
     if selected_boot_size == estimated_boot_size:
