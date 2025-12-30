@@ -51,10 +51,13 @@ streamlit run arnes.py
 
 ## File Structure
 
-- `arnes.py`: Main Streamlit application code
+- `arnes.py`: Original Streamlit application code
+- `arnes_refactored.py`: Refactored version with improved structure and maintainability
 - `avalanche_dog_boot_model.pkl`: Pre-trained model file (required for predictions)
 - `requirements.txt`: Python dependencies
 - `README.md`: This file
+- `REFACTORING_CHANGES.md`: Documentation of refactoring improvements
+- `IMPROVEMENTS_SUMMARY.md`: Summary of improvements made to the original code
 
 ## Language
 
