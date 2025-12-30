@@ -50,7 +50,7 @@ def load_model_and_predict(harness_size):
         predicted_boot_size = loaded_model.predict(inputs)[0] #devuelve una serie, usamos el [0] para que me de el valor de la celda con el resultado
         return predicted_boot_size
     except Exception as e:
-        st.error(f"Error making prediction: {str(e)}")
+        st.error(f"Error al realizar la predicción: {e}")
         return None
 
 def check_size_of_boots(selected_harness_size, selected_boot_size):
