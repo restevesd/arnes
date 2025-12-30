@@ -17,15 +17,14 @@ def load_model():
     Esta función carga un modelo preentrenado y lo mantiene en caché
     para mejorar el rendimiento.
     '''
-    if not os.path.exists(model_filename):
-        st.error(f"Model file '{model_filename}' not found!")
-        return None
-    
     try:
         loaded_model = joblib.load(model_filename)
         return loaded_model
+    except FileNotFoundError:
+        st.error(f"¡Archivo del modelo '{model_filename}' no encontrado!")
+        return None
     except Exception as e:
-        st.error(f"Error loading model: {str(e)}")
+        st.error(f"Error al cargar el modelo: {e}")
         return None
 
 def load_model_and_predict(harness_size):
