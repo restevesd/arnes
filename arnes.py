@@ -124,7 +124,7 @@ with st.expander("¿Cómo medir el tamaño del arnés?"):
     - La medida debe estar en centímetros
     """)
 
-with st.form(key='diabetes-pred-form'):
+with st.form(key='dog-boot-pred-form'):
     col1, col2 = st.columns(2)
     
     arnes = col1.slider(label='Tamaño del arnés (cm):', min_value=1, max_value=100, value=30, help="Mida la circunferencia del pecho de su perro")
