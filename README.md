@@ -24,7 +24,7 @@ This application uses a pre-trained machine learning model to predict the optima
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.8+
 - Streamlit
 - joblib
 - statsmodels
@@ -40,21 +40,50 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Run the Streamlit application:
+### Recommended (New Structure)
+
+Run the application using the new modular structure:
+
+```bash
+streamlit run app.py
+```
+
+### Legacy Mode
+
+You can still run the original monolithic version:
+
 ```bash
 streamlit run arnes.py
 ```
 
-2. Use the slider to select your dog's harness size (in cm)
-3. Enter the boot size you're considering in the text input
-4. Click "Check" to get feedback on your selection
+### Using the Application
 
-## File Structure
+1. Use the slider to select your dog's harness size (in cm)
+2. Enter the boot size you're considering in the text input
+3. Click "Check" to get feedback on your selection
 
-- `arnes.py`: Main Streamlit application code
-- `avalanche_dog_boot_model.pkl`: Pre-trained model file (required for predictions)
-- `requirements.txt`: Python dependencies
-- `README.md`: This file
+## Project Structure
+
+```
+├── app.py                      # Main entry point for the Streamlit app
+├── arnes.py                    # Legacy monolithic application (maintained for compatibility)
+├── avalanche_dog_boot_model.pkl # Pre-trained model file
+├── requirements.txt            # Python dependencies
+├── README.md                   # This file
+├── docs/                       # Documentation
+│   └── README.md               # Additional documentation
+└── src/                        # Source code modules
+    ├── __init__.py             # Package initialization
+    ├── models/                 # Machine learning logic
+    │   ├── __init__.py
+    │   └── predictor.py        # Model prediction functions
+    ├── utils/                  # Utility functions and validators
+    │   ├── __init__.py
+    │   └── validators.py       # Input validation and business logic
+    └── ui/                     # User interface components
+        ├── __init__.py
+        └── components.py       # Streamlit UI components
+```
 
 ## Language
 
@@ -63,3 +92,26 @@ The application is in Spanish, with the title "Compra de Arneses y Botas para pe
 ## Model Information
 
 The application uses a pre-trained model stored in `avalanche_dog_boot_model.pkl` to predict appropriate boot sizes. The model was trained to understand the relationship between harness sizes and optimal boot sizes for dogs.
+
+## Architecture
+
+This project has been restructured following best practices:
+
+- **Separation of Concerns**: Code is organized into specialized modules (models, utils, ui)
+- **Type Safety**: Full type hints throughout the codebase
+- **Documentation**: Comprehensive docstrings for all functions and classes
+- **Error Handling**: Structured error handling with custom exceptions
+- **Maintainability**: Modular design makes the code easier to test and extend
+
+## Development
+
+To contribute or extend the application:
+
+1. Add new features in the appropriate module under `src/`
+2. Update tests as needed
+3. Ensure type hints are added for all new code
+4. Update documentation in `docs/`
+
+## License
+
+[Add your license information here]
